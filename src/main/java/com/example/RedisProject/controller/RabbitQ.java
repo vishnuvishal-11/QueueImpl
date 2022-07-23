@@ -24,6 +24,9 @@ public class RabbitQ implements  QueueSelector {
     @Autowired
     private UserRequestRepository userRequestRepository;
 
+    public RabbitQ() {
+    }
+
     @Autowired
     @Qualifier("que")
     private Queue queue;

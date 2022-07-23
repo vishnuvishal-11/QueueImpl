@@ -1,11 +1,10 @@
 package com.example.RedisProject;
-
 import com.example.RedisProject.Service.QueueInterface;
 import com.example.RedisProject.ServiceImpl.Implementation;
 import com.example.RedisProject.model.UserRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
-import org.springframework.security.core.userdetails.User;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 
 import java.util.ArrayList;
 import java.util.List;

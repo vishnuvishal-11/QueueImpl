@@ -13,7 +13,10 @@ public class CustomQueue implements QueueSelector {
     @Qualifier
     private QueueInterface queueInterface;
 
-//    @Autowired
+    public CustomQueue() {
+    }
+
+    //    @Autowired
 //    @Qualifier("impl")
 //    QueueInterface<UserRequest> queueInterface;
     @Override
