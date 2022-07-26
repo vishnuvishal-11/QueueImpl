@@ -45,8 +45,8 @@ public class RabbitQ implements  QueueSelector {
     @Override
     public Object deque() {
 
-<span class="fc" id="L48">        try { Object message = rabbitTemplate.receiveAndConvert(QUEUE);</span>
-<span class="fc" id="L49">            return message;</span>
+<span class="nc" id="L48">        try { Object message = rabbitTemplate.receiveAndConvert(QUEUE);</span>
+<span class="nc" id="L49">            return message;</span>
 <span class="fc" id="L50">        } catch (Exception e) {</span>
 <span class="fc" id="L51">            return null;</span>
         }

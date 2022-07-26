@@ -270,7 +270,6 @@
 								<include>com/example/RedisProject/TestController.java</include>
 								<include>com/example/RedisProject/TestRabbitQ.java</include>
 								<include>com/example/RedisProject/TestCustomEndpoints.java</include>
-
 							</includes>
 						</configuration>
 					</execution>
@@ -315,7 +314,7 @@
 								<exclude>com/example/RedisProject/model/*</exclude>
 								<exclude>com/example/RedisProject/security/*</exclude>
 								<exclude>com/example/RedisProject/rabbitconfig/*</exclude>
-								<exclude>com/example/RedisProject/RedisProjectApplication.Class/*</exclude>
+								<exclude>com/example/RedisProject/RedisProjectApplication.Class</exclude>
 							</excludes>
 							<rules>
 								<rule>
@@ -324,7 +323,7 @@
 										<limit>
 											<counter>LINE</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>0.8</minimum>
+											<minimum>0.3</minimum>
 										</limit>
 									</limits>
 								</rule>

@@ -18,8 +18,8 @@ import java.util.concurrent.ThreadLocalRandom;
 <span class="fc" id="L18">        int minute = now.get(Calendar.MINUTE);</span>
 
         Health.Builder status;
-<span class="fc bfc" id="L21" title="All 2 branches covered.">        if (minute % 2 == 0)</span>
-<span class="fc" id="L22">        status = Health.up();</span>
+<span class="pc bpc" id="L21" title="1 of 2 branches missed.">        if (minute % 2 == 0)</span>
+<span class="nc" id="L22">        status = Health.up();</span>
         else
 <span class="fc" id="L24">            status = Health.down();</span>
 

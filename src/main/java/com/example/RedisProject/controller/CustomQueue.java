@@ -29,7 +29,6 @@ public class CustomQueue implements QueueSelector {
     public Object deque() throws NullPointerException {
         Object deletedElement =  queueInterface.deque();
         if (deletedElement == null ) {
-            log.info(" customQ - deque has been Accessed But Queue is Empty...");
             return "empty queue";
         } else {
             log.info(" customQ - deque has been Accessed ...");
