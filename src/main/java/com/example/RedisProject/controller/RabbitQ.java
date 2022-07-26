@@ -17,38 +17,35 @@ import static com.example.RedisProject.rabbitconfig.Config.*;
 @Slf4j
 @Component("rabbitq")
 public class RabbitQ implements  QueueSelector {
-    @Autowired
-    private RabbitTemplate rabbitTemplate;
+   // @Autowired
+    private final RabbitTemplate rabbitTemplate;
 
     private AmqpAdmin rabbitAdmin;
-    @Autowired
-    private UserRequestRepository userRequestRepository;
 
-    public RabbitQ() {
+    public RabbitQ(RabbitTemplate rabbitTemplate) {
+        this.rabbitTemplate=rabbitTemplate;
     }
 
-    @Autowired
-    @Qualifier("que")
-    private Queue queue;
-
-    @Autowired
-    private TopicExchange exchange;
-
-    @Autowired
-    private Binding binding;
+//    @Autowired
+//    @Qualifier("que")
+//    private Queue queue;
+//
+//    @Autowired
+//    private TopicExchange exchange;
+//
+//    @Autowired
+//    private Binding binding;
 
     @Override
-    public void enque(UserRequest userRequest) {
+    public String enque(UserRequest userRequest) {
         rabbitTemplate.convertAndSend(Config.EXCHANGE, Config.ROUTING_KEY, userRequest);
-     //   userRequestRepository.save(userRequest);
-        log.info("RabbitQ - Enque Method has been Accessed ...");
+        return "inserted";
     }
 
     @Override
     public Object deque() {
 
         try { Object message = rabbitTemplate.receiveAndConvert(QUEUE);
-         //  userRequestRepository.deleteById(((UserRequest) message).getId());
             return message;
         } catch (Exception e) {
             return null;
@@ -59,7 +56,9 @@ public class RabbitQ implements  QueueSelector {
        rabbitAdmin=new RabbitAdmin(rabbitTemplate);
         Properties property=rabbitAdmin.getQueueProperties(QUEUE);
         log.info("RabbitQ - size accessed...: ");
+        if(!property.isEmpty())
         return (int) property.get(QUEUE_MESSAGE_COUNT);
+        else return 0;
 
         }
     }

@@ -9,14 +9,12 @@ com\example\RedisProject\ServiceImpl\Implementation.class
 com\example\RedisProject\Redis\CustomImpl.class
 com\example\RedisProject\CustomEndpoint\InfoEndpoint.class
 com\example\RedisProject\security\AccessList.class
-com\example\RedisProject\model\UserRequestDto2.class
 com\example\RedisProject\controller\QueueSelector.class
-com\example\RedisProject\security\MyAccessDeniedHandler.class
+com\example\RedisProject\Repository\AccessListRepository.class
 com\example\RedisProject\Redis\RedisImpl.class
 com\example\RedisProject\model\UserRequestDto.class
 com\example\RedisProject\Repository\UserRequestRepository.class
 com\example\RedisProject\controller\RabbitQ.class
-com\example\RedisProject\Redis\AccessListRepository.class
 com\example\RedisProject\controller\CustomQueue.class
 com\example\RedisProject\Redis\RedisConfig.class
 com\example\RedisProject\rabbitconfig\Config2.class
@@ -24,4 +22,3 @@ com\example\RedisProject\controller\QueueClass.class
 com\example\RedisProject\model\UserRequest.class
 com\example\RedisProject\RedisProjectApplication.class
 com\example\RedisProject\rabbitconfig\Config.class
-com\example\RedisProject\model\UserRequest$UserRequestBuilder.class

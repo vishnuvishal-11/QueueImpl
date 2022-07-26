@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 
-@SpringBootApplication(scanBasePackages ={"com.example.RedisProject.*","com.example.RedisProject.Service"})//, "com.example.controller", "com.example.Service", "com.example.ServiceImpl", "com.example.rabbitconfig", "com.example.Redis", "com.example.model", "com.example.ipServices", "com.example.security", "com.example.CustomEndpoint","com.example.Repository"})
+@SpringBootApplication(scanBasePackages ={"com.example.RedisProject.*","com.example.RedisProject.Service","com.example.RedisProject.model"})//, "com.example.controller", "com.example.Service", "com.example.ServiceImpl", "com.example.rabbitconfig", "com.example.Redis", "com.example.model", "com.example.ipServices", "com.example.security", "com.example.CustomEndpoint","com.example.Repository"})
 @EnableRedisRepositories
 @EnableAutoConfiguration
 @EnableJpaRepositories(basePackages="com.example.RedisProject.Repository")

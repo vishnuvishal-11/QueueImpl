@@ -14,7 +14,6 @@ public class SecurityConfiguration  {
 
     @Bean
     public InMemoryUserDetailsManager userDetailsService() {
-        log.info("in configure 1");
         UserDetails user = User.withDefaultPasswordEncoder()
                 .username("admin")
                 .password("admin")
@@ -29,7 +28,6 @@ public class SecurityConfiguration  {
     }
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        log.info("in configure 2");
         http.csrf().disable().cors().and().authorizeHttpRequests((authz) -> authz
                 .antMatchers("/queue/size") .hasAnyRole("USER","ADMIN")
         ) .httpBasic(withDefaults());
@@ -38,7 +36,6 @@ public class SecurityConfiguration  {
                         .anyRequest().hasRole("ADMIN")
                 )
                 .httpBasic(withDefaults());
-
         return http.build();
     }
     }

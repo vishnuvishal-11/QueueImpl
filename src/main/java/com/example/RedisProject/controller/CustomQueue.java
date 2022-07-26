@@ -10,19 +10,19 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component("customqueue")
 public class CustomQueue implements QueueSelector {
-    @Qualifier
-    private QueueInterface queueInterface;
 
-    public CustomQueue() {
+
+    public CustomQueue(QueueInterface queueInterface) {
+       this.queueInterface=queueInterface;
     }
 
-    //    @Autowired
-//    @Qualifier("impl")
-//    QueueInterface<UserRequest> queueInterface;
+  //  @Autowired
+   private final QueueInterface queueInterface;
     @Override
-    public void enque(UserRequest userRequest) {
+    public String enque(UserRequest userRequest) {
         queueInterface.enque(userRequest);
-        log.info(" customQ - Enque Method has been Accessed...");
+        return "inserted";
+
     }
 
     @Override

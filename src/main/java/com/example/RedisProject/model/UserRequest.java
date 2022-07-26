@@ -18,8 +18,6 @@ import java.io.Serializable;
 @Validated
 @RedisHash("items")
 @Entity
-@Builder
-@Table(name = "USERREDIS")
 public class UserRequest implements Serializable {
     @Id
     @Column(name = "id", nullable = false)

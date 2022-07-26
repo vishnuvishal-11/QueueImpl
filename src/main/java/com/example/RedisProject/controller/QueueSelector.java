@@ -6,7 +6,7 @@ import com.example.RedisProject.model.UserRequest;
 import java.io.IOException;
 
 public interface QueueSelector {
-    void enque(UserRequest userRequest) throws IOException;
+    String enque(UserRequest userRequest) throws IOException;
     Object deque() throws JsonProcessingException;
     int size();
 }

@@ -8,11 +8,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 class RedisProjectApplicationTests {
-	@Autowired
-	private QueueClass controller;
+
 	@Test
 	void contextLoads()throws Exception {
-		assertThat(controller).isNotNull();
 	}
 
 }

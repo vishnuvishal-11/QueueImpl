@@ -1,4 +1,5 @@
 package com.example.RedisProject.model;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.validator.GenericValidator;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
 
 @Component("convert")
 @Slf4j
+@NoArgsConstructor
 public class Converter {
     public UserRequestDto entityToDto(UserRequest userRequest) throws ParseException {
         String[] arrOfStr = userRequest.getUserName().split("_");
